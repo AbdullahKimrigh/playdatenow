@@ -6,12 +6,6 @@
   become: yes 
   
 
-- name: Update apt cache 
-    apt:
-      name: '*'
-      update_cache: yes 
-      state: latest
-      
 
   - name: Install java
     apt:
