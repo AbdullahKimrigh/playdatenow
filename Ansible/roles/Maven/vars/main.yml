@@ -1,2 +1,4 @@
 packages:
   - maven
+  - openjdk-11-jre
+

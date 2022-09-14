@@ -1,76 +1,31 @@
-- hosts: My_Group
-   
-  tasks:
-      
-    - name: ensure the jenkins apt repository key is installed
-      apt_key: url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present
-      become: yes
+- name: Download Jenkins repo apt URL
+  apt_key:
+    url: "{{ jenkins.repo_url }}"
+    state: present
+  become: true
 
-    - name: ensure the repository is configured
-      apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
-      become: yes
+- name: ensure the repository is configured
+  apt_repository:
+    repo: 'deb https://pkg.jenkins.io/debian-stable binary/'
+    state: present
+  become: true
 
-    - name: ensure jenkins is installed
-      apt: name=jenkins update_cache=yes
-      become: yes
+- name: install jenkins
+  apt:
+    name: jenkins
+    state: latest
+  become: true
 
-    - name: ensure jenkins is running
-      service: name=jenkins state=started
+- name: start Jenkins
+  service:
+    name: jenkins
+    enabled: true
+    state: started
 
+- name: get init password jenkins
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  become: true
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ---
-# - name: Download Jenkins repo apt URL 
-#   apt_key:
-#     url: "{{jenkins.repo_URL}}"
-#     state: present 
-#   become: yes 
-
-# - name: apt update
-#   apt:
-#     name: '*'
-#     state: latest
-  
-# - name: Install java
-#   apt:
-#     name: "{{java}}"
-#     state: present
-#   become: yes
-
-# - name: Install jenkins
-#   apt:
-#     name: "{{jenkins}}" 
-#     state: present
-
-
-# - name: Start jenkins
-#   ansible.builtin.systemd:
-#    name: jenkins
-#    state: started
-  
+- name: print init jenkins password
+  debug:
+    var: result.stdout
