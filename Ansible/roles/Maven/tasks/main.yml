@@ -1,5 +1,11 @@
+- name: install Java
+  apt:
+    name: openjdk-11-jre
+    state: present
+  become: true
+
 - name: Install Maven using Ansible
   apt:
-    name: "{{ packages }}"
+    name: maven
     state: present
   become: true
