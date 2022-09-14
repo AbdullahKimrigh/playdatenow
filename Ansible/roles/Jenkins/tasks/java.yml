@@ -1,4 +1,4 @@
-- hosts: webservers
+- hosts: playdatenow
   
   tasks:
     - name: Update APT package manager repositories cache
