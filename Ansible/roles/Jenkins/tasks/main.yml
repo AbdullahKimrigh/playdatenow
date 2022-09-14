@@ -20,11 +20,11 @@
   apt:
     name: "{{jenkins}}" 
     state: present
-  become: yes
+  
 
 - name: Start jenkins
   service:
    name: jenkins
    enabled: true
    state: started
-  become: yes
+  
