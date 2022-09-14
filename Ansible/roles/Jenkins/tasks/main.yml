@@ -1,89 +1,35 @@
 ---
-  - name: Download Long Term Jenkins release
-    get_url:
-      url: https://pkg.jenkins.io/debian-stable/jenkins.repo
-      dest: /etc/apt.repos.d/jenkins.repo
+- name: Download Jenkins repo apt URL 
+  apt_key:
+    url: "{{jenkins.repo_URL}}"
+    state: present 
+  become: yes 
 
-  - name: Import jenkins key from url
-    ansible.builtin.rpm_key:
-      state: present
-      key: https://pkg.jenkins.io/debian-stable/jenkins.io.key
-
-  - name: apt update
-    apt:
-      name: '*'
-      state: latest
-
-  - name: Install java
-    apt:
-      name: java-11-openjdk-devel
-      state: present
-
-  - name: Install jenkins
-    apt:
-      name: jenkins
-      state: latest
-
-  - name: daemon-reload to pick up config changes
-    ansible.builtin.systemd:
-      daemon_reload: yes
-
-  - name: Start jenkins
-    ansible.builtin.systemd:
-      name: jenkins
-      state: started
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ---
-# - name: Download Jenkins repo apt URL 
-#   apt_key:
-#     url: "{{jenkins.repo_URL}}"
-#     state: present 
-#   become: yes 
-
-# - name: apt update
-#   apt:
-#     name: '*'
-#     state: latest
+- name: apt update
+  apt:
+    name: '*'
+    state: latest
   
-# - name: Install java
-#   apt:
-#     name: "{{java}}"
-#     state: present
-#   become: yes
+- name: Install java
+  apt:
+    name: "{{java}}"
+    state: present
+  become: yes
 
-# - name: Install jenkins
-#   apt:
-#     name: "{{jenkins}}" 
-#     state: present
+- name: Install jenkins
+  apt:
+    name: "{{jenkins}}" 
+    state: present
 
-# - name: Import jenkins key from url
-#     ansible.builtin.rpm_key:
-#       state: present
-#       key: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+- name: Import jenkins key from url
+    ansible.builtin.rpm_key:
+     apt_key:
+       url: "{{jenkins.repo_URL}}"
+       state: present
+     become: yes
 
-
-# - name: Start jenkins
-#   ansible.builtin.systemd:
-#    name: jenkins
-#    state: started
+- name: Start jenkins
+  ansible.builtin.systemd:
+   name: jenkins
+   state: started
   
