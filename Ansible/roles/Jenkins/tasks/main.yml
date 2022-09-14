@@ -5,7 +5,7 @@
     state: present 
   become: yes 
 
-- name: yum update
+- name: apt update
   apt:
     name: '*'
     state: latest
