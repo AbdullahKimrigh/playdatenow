@@ -25,6 +25,7 @@
 
 - name: get init password jenkins
   shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: result  
   become: true
 
 - name: print init jenkins password
