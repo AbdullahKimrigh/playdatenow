@@ -1,1 +1,0 @@
-alert("This is the date template page");
