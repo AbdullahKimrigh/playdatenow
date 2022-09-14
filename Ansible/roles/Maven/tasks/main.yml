@@ -1,0 +1,5 @@
+- name: Install Maven using Ansible
+  apt:
+    name: "{{ packages }}"
+    state: present
+  become: true
