@@ -1,0 +1,21 @@
+- name: "Create a Volume"
+  docker_volume:
+    name: "{{ docker_volume }}"
+
+- name: "Create a network"
+  docker_network:
+    name: "{{ docker_network }}"
+
+- name: "Launch database container"
+  docker_container:
+    name: "{{ DB_NAME }}"
+    image: mysql
+    volumes:
+      - "{{ docker_volume }}:/var/lib/mysql:rw"
+    restart_policy: always
+    network_mode: "{{ docker_network }}"
+    env:
+      MYSQL_ROOT_PASSWORD: admin
+      DB_DATABASE: admin
+      DB_USER: admin
+      DB_PASSWORD: admin

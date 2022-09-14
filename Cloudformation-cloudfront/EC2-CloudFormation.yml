@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Cloudfront-Pojects-Playdatenow-root team
+
+Resources:
+  playdatenow:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        DefaultRootObject: index.jsp
+        Origins:
+        - Id: Custom Origin
+          DomainName: Test-env.eba-zzpsrmuq.us-east-1.elasticbeanstalk.com
+          CustomOriginConfig:
+            OriginProtocolPolicy: match-viewer
+        DefaultCacheBehavior:
+          TargetOriginId: Custom Origin
+          ForwardedValues:
+            QueryString: true
+          ViewerProtocolPolicy: allow-all
+        CacheBehaviors:
+        - TargetOriginId: Custom Origin
+          ForwardedValues:
+            QueryString: false
+          ViewerProtocolPolicy: allow-all
+          MinTTL: 500
+          PathPattern: '*.jpg'
+        Comment: Sample multi-origin CloudFront distribution created using CloudFormation.
+        Enabled: true
+Outputs:
+  DistributionId:
+    Description: CloudFront Distribution Id
+    Value: !Ref 'playdatenow'
