@@ -15,14 +15,14 @@ Resources:
       EnableDnsHostnames: true
       Tags:
         - Key: Name
-          Value: myvpc-playdatenow
+          Value: vpc-playdatenow
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
         - Key: Name
-          Value: myvpc-playdatenow-igw
+          Value: vpc-playdatenow-igw
 
   InternetGatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
@@ -101,18 +101,7 @@ Resources:
     Properties:
       RouteTableId: !Ref PublicRouteTable
       SubnetId: !Ref PublicSubnet2
-      
   WebServerSecurityGroupplaydatenow:
-    Type: 'AWS::EC2::SecurityGroup'
-    Properties:
-      GroupDescription: Enable HTTP from 0.0.0.0/0
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: '80'
-          ToPort: '80'
-          CidrIp: 0.0.0.0/0
-      VpcId: !Ref VPC 
-  WebServerSecurityGroupplaydatenow2:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
       GroupDescription: Enable SSH from 0.0.0.0/0
@@ -121,26 +110,19 @@ Resources:
           FromPort: '22'
           ToPort: '22'
           CidrIp: 0.0.0.0/0
-      VpcId: !Ref VPC 
-  WebServerSecurityGroupplaydatenow3:
-    Type: 'AWS::EC2::SecurityGroup'
-    Properties:
-      GroupDescription: Enable SSH from 0.0.0.0/0
-      SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: '9090'
           ToPort: '9090'
           CidrIp: 0.0.0.0/0
-      VpcId: !Ref VPC 
-  WebServerSecurityGroupplaydatenow4:
-    Type: 'AWS::EC2::SecurityGroup'
-    Properties:
-      GroupDescription: Enable SSH from 0.0.0.0/0
-      SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: '8080'
           ToPort: '8080'
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0
+        
       VpcId: !Ref VPC 
   EC2Instanceplaydatenow:
     Type: AWS::EC2::Instance
@@ -150,9 +132,6 @@ Resources:
       SubnetId: !Ref PublicSubnet1
       SecurityGroupIds: 
         - !Ref WebServerSecurityGroupplaydatenow
-        - !Ref WebServerSecurityGroupplaydatenow2
-        - !Ref WebServerSecurityGroupplaydatenow3
-        - !Ref WebServerSecurityGroupplaydatenow4
       Tags:
        - Key: Name
          Value: ubuntu 
