@@ -1,35 +1,72 @@
----
-- name: Download Jenkins repo apt URL 
-  apt_key:
-    url: "{{jenkins.repo_URL}}"
-    state: present 
-  become: yes 
-
-- name: apt update
-  apt:
-    name: '*'
-    state: latest
-  
-- name: Install java
-  apt:
-    name: "{{java}}"
-    state: present
+- name: ensure the jenkins apt repository key is installed
+  apt_key: url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present
   become: yes
 
-- name: Install jenkins
-  apt:
-    name: "{{jenkins}}" 
-    state: present
+- name: ensure the repository is configured
+  apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
+  become: yes
 
-- name: Import jenkins key from url
-    ansible.builtin.rpm_key:
-     apt_key:
-       url: "{{jenkins.repo_URL}}"
-       state: present
-     become: yes
+- name: ensure jenkins is installed
+  apt: name=jenkins update_cache=yes
+  become: yes
 
-- name: Start jenkins
-  ansible.builtin.systemd:
-   name: jenkins
-   state: started
+- name: ensure jenkins is running
+  service: name=jenkins state=started
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ---
+# - name: Download Jenkins repo apt URL 
+#   apt_key:
+#     url: "{{jenkins.repo_URL}}"
+#     state: present 
+#   become: yes 
+
+# - name: apt update
+#   apt:
+#     name: '*'
+#     state: latest
+  
+# - name: Install java
+#   apt:
+#     name: "{{java}}"
+#     state: present
+#   become: yes
+
+# - name: Install jenkins
+#   apt:
+#     name: "{{jenkins}}" 
+#     state: present
+
+
+# - name: Start jenkins
+#   ansible.builtin.systemd:
+#    name: jenkins
+#    state: started
   
