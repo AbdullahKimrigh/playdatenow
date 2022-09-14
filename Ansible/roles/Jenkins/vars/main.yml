@@ -1,0 +1,5 @@
+java: "openjdk-11-jre"
+jenkins: 
+  repo_url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+result:
+  stdout:
