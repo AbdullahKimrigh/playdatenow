@@ -5,7 +5,6 @@
     state: present 
   become: yes 
   
-
 - name: Install java
   apt:
     name: "{{java}}"
@@ -14,7 +13,8 @@
 - name: Install jenkins
   apt:
     name: "{{jenkins}}" 
-    state: latest
+    state: present
+  become: yes
 
 - name: Start jenkins
   service:
