@@ -18,13 +18,12 @@
 
 - name: Install jenkins
   apt:
-    name: jenkins 
+    name: "{{jenkins}}" 
     state: present
   
 
 - name: Start jenkins
-  service:
+  ansible.builtin.systemd:
    name: jenkins
-   enabled: true
    state: started
   
