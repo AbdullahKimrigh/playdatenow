@@ -9,7 +9,7 @@ Resources:
         DefaultRootObject: index.jsp
         Origins:
         - Id: Custom Origin
-          DomainName: 
+          DomainName: Test-env.eba-zzpsrmuq.us-east-1.elasticbeanstalk.com
           CustomOriginConfig:
             OriginProtocolPolicy: match-viewer
         DefaultCacheBehavior:
@@ -26,3 +26,7 @@ Resources:
           PathPattern: '*.jpg'
         Comment: Sample multi-origin CloudFront distribution created using CloudFormation.
         Enabled: true
+Outputs:
+  DistributionId:
+    Description: CloudFront Distribution Id
+    Value: !Ref 'playdatenow'
