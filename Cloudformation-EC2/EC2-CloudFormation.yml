@@ -4,7 +4,7 @@ Description:  EC2-Pojects-Playdatenow-root team
 Mappings:
   RegionMap:
     us-east-1:
-      playdatenow: ami-052efd3df9dad4825
+      Ubuntu22: ami-052efd3df9dad4825
 
 Resources:
   VPC:
@@ -127,14 +127,22 @@ Resources:
   EC2Instanceplaydatenow:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", playdatenow]
+      ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", Ubuntu22]
       InstanceType: t2.large
+      BlockDeviceMappings: 
+        - DeviceName: /dev/sda1
+          Ebs: 
+            VolumeType: io1
+            VolumeSize: 30
+            Iops: 100
+            DeleteOnTermination: false
+
       SubnetId: !Ref PublicSubnet1
       SecurityGroupIds: 
         - !Ref WebServerSecurityGroupplaydatenow
       Tags:
        - Key: Name
-         Value: ubuntu 
+         Value: playdatenow
 Outputs:
    AZname:
       Value: !GetAtt EC2Instanceplaydatenow.AvailabilityZone
