@@ -20,4 +20,4 @@
   service:
    name: jenkins
    enabled: true
-   state: started
+   state: start
