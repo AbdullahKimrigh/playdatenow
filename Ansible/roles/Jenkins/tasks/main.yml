@@ -6,20 +6,18 @@
   become: yes 
   
 
+- name: Install java
+  apt:
+    name: "{{java}}"
+    state: present
 
-  - name: Install java
-    apt:
-     name: "{{java}}"
-     state: present
+- name: Install jenkins
+  apt:
+    name: jenkins
+    state: latest
 
-  - name: Install jenkins
-    apt:
-     name: jenkins
-     state: latest
-
-
-  - name: Start jenkins
-    service:
-      name: jenkins
-      enabled: true
-      state: started
+- name: Start jenkins
+  service:
+   name: jenkins
+   enabled: true
+   state: started
