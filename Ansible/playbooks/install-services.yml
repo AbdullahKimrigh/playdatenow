@@ -2,6 +2,6 @@
   hosts: webservers
   roles:
     - ../roles/Jenkins
-    #- ../roles/SonarQube
-    #- ../roles/Maven
+    - ../roles/SonarQube
+    - ../roles/Maven
   become: true
