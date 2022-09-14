@@ -1,2 +1,2 @@
 [webservers]
-playdatenow ansible_host=ec2-44-201-199-116.compute-1.amazonaws.com ansible_connection=local
+playdatenow ansible_host=ec2-54-198-51-186.compute-1.amazonaws.com ansible_connection=local
