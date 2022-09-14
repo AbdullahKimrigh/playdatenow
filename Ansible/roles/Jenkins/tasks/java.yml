@@ -1,11 +1,11 @@
 - hosts: webservers
   
   tasks:
-    - name: Task - 1 Update APT package manager repositories cache
+    - name: Update APT package manager repositories cache
       become: true
       apt:
         update: yes
-    - name: Task -2 Install Java using Ansible
+    - name: Install Java using Ansible
       become: yes
       apt:
         name: "{{ packages }}"
