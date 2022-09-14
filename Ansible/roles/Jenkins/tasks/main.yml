@@ -4,6 +4,11 @@
     url: "{{jenkins.repo_URL}}"
     state: present 
   become: yes 
+
+- name: yum update
+  apt:
+    name: '*'
+    state: latest
   
 - name: Install java
   apt:
