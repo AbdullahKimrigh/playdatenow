@@ -1,4 +1,4 @@
-- hosts: My_Group
+- hosts: webservers
   
   tasks:
     - name: Task - 1 Update APT package manager repositories cache
