@@ -1,0 +1,6 @@
+---
+
+java: "openjdk-11-jdk"
+#vars file for roles/jenk
+jenkins:
+    repo_URL: "https://pkg.jenkins.io/debian-stable/jenkins.io.key"

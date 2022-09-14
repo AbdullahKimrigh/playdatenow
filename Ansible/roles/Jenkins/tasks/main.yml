@@ -1,0 +1,30 @@
+---
+- name: Download Jenkins repo apt URL 
+  apt_key:
+    url: "{{jenkins.repo_URL}}"
+    state: present 
+  become: yes 
+  
+
+- name: Update apt cache 
+    apt:
+      update_cache: yes
+      state: latest
+      
+
+  - name: Install java
+    apt:
+     name: "{{java}}"
+     state: present
+
+  - name: Install jenkins
+    apt:
+     name: jenkins
+     state: latest
+
+
+  - name: Start jenkins
+    service:
+      name: jenkins
+      enabled: true
+      state: started
