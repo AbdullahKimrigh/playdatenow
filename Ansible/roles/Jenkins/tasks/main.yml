@@ -12,7 +12,7 @@
 
 - name: install jenkins
   apt:
-    name: jenkins
+    name: "{{jenkins}}"
     state: latest
   become: true
 
