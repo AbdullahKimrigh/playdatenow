@@ -1,8 +1,4 @@
-- hosts: target
-  become: yes
-  remote_user: ubuntu
-  become_user: root
-  tasks:
+---
   - name: Download Long Term Jenkins release
     get_url:
       url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
