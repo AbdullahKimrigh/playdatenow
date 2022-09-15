@@ -11,6 +11,11 @@ Conditions:
   CreateDNSRecordCondition: !Not [!Equals [ !Ref MyHostedZoneName, "" ]]
 
 Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: playdatanew4
   BeanstalkApplication:
     Type: AWS::ElasticBeanstalk::Application
     Properties:
