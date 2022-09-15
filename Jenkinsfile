@@ -58,11 +58,11 @@ pipeline {
         {
             environment { 
                 sh '''
-                    DB_URL="ec2-54-204-130-157.compute-1.amazonaws.com"
-                    DB_PORT=3306
-                    DB_NAME="playdatenow"
-                    DB_USERNAME="root"
-                    DB_PASSWORD="root"
+                    export DB_URL="ec2-54-204-130-157.compute-1.amazonaws.com"
+                    export DB_PORT=3306
+                    export DB_NAME="playdatenow"
+                    export DB_USERNAME="root"
+                    export DB_PASSWORD="root"
                 '''
             }
             steps {
