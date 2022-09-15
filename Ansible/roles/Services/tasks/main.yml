@@ -4,8 +4,14 @@
     state: present
   become: true
 
-- name: Install Maven using Ansible
+- name: Install Maven
   apt:
     name: maven
+    state: present
+  become: true
+
+- name: Install awscli
+  apt:
+    name: awscli
     state: present
   become: true

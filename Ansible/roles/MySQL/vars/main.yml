@@ -1,3 +1,9 @@
 docker_volume: db_data
-docker_network: wordpress_net
-DB_NAME: db
+docker_network: playdatenow_net
+DB_NAME: playdatenow
+MYSQL_ROOT_PASSWORD: root
+DB_DATABASE: playdatenoe_db
+DB_USERNAME: root
+DB_PASSWORD: root
+DB_PORT: 3306
+DB_URL: localhost

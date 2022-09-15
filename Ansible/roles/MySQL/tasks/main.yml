@@ -15,7 +15,9 @@
     restart_policy: always
     network_mode: "{{ docker_network }}"
     env:
-      MYSQL_ROOT_PASSWORD: admin
-      DB_DATABASE: admin
-      DB_USER: admin
-      DB_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: "{{ MYSQL_ROOT_PASSWORD }}"
+      DB_DATABASE: "{{ DB_DATABASE }}"
+      DB_USERNAME: "{{ DB_USERNAME }}"
+      DB_PASSWORD: "{{ DB_PASSWORD }}"
+      DB_PORT: "{{ DB_PORT }}"
+      DB_URL: "{{ DB_URL }}"
