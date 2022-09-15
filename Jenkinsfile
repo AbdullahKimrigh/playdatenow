@@ -7,7 +7,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
 
         AWS_S3_BUCKET = "playdatanew"
-        ARTIFACT_NAME = "app1war"
+        ARTIFACT_NAME = "app1.war"
         AWS_EB_APP_NAME = "eb-tomcat"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "eb-tomcat"
