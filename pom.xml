@@ -18,7 +18,7 @@
 	<name>playdatenow_v03b</name>
 	<description>playdatenow_v03b</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 	
 	<dependencies>
