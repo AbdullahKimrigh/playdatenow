@@ -15,7 +15,7 @@ Resources:
     Type: 'AWS::S3::Bucket'
     DeletionPolicy: Retain
     Properties:
-      BucketName: playdatanew3
+      BucketName: playdatanew4
   BeanstalkApplication:
     Type: AWS::ElasticBeanstalk::Application
     Properties:
@@ -29,7 +29,7 @@ Resources:
       OptionSettings:
       - Namespace: aws:autoscaling:launchconfiguration
         OptionName: InstanceType
-        Value: t2.micro
+        Value: t2.large
       - Namespace: aws:autoscaling:launchconfiguration
         OptionName: SSHSourceRestriction
         Value: !Sub "tcp, 22, 22, 127.0.0.1/32"
