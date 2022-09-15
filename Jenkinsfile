@@ -7,7 +7,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
 
         AWS_S3_BUCKET = "playdatanew1"
-        ARTIFACT_NAME = "app.war"
+        ARTIFACT_NAME = "playdatenow.war"
         AWS_EB_APP_NAME = "eb-playdatenow"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "eb-playdatenow"
@@ -81,6 +81,13 @@ pipeline {
                 
             }
         }
+
+        stage('openDB') {
+            steps {
+                sh "mvn spring-boot:run"
+            }
+        }
+
 
         stage('Deploy') {
             steps {
