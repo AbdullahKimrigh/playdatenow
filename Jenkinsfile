@@ -74,6 +74,12 @@ pipeline {
             }
         }
 
+        stage('db') {
+            steps {
+                sh "mvn spring-boot:run" 
+            }
+        }
+
         stage('Deploy') 
         {
             steps {
