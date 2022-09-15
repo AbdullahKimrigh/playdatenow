@@ -7,10 +7,10 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
 
         AWS_S3_BUCKET = "playdatanew"
-        ARTIFACT_NAME = "app1.war"
-        AWS_EB_APP_NAME = "eb-tomcat"
+        ARTIFACT_NAME = "app2.war"
+        AWS_EB_APP_NAME = "playdatanow-eb1"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "eb-tomcat"
+        AWS_EB_ENVIRONMENT = "playdatanow-eb1"
 
         SONAR_IP = "107.20.130.140:9000"
         SONAR_TOKEN = "sqp_4e86da3cc4b4d65e9527a2ecaa3298251bf4d4d4"
