@@ -5,5 +5,3 @@ MYSQL_ROOT_PASSWORD: root
 DB_DATABASE: playdatenoe_db
 DB_USERNAME: root
 DB_PASSWORD: root
-DB_PORT: 3306
-DB_URL: localhost
