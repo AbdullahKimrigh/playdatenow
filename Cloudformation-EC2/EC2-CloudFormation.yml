@@ -141,6 +141,7 @@ Resources:
     Properties:
       ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", Ubuntu22]
       InstanceType: t2.large
+      KeyName: "CodingDojo"
       BlockDeviceMappings: 
         - DeviceName: /dev/sda1
           Ebs: 
