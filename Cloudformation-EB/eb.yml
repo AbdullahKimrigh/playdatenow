@@ -48,7 +48,7 @@ Resources:
       - Namespace: aws:elasticbeanstalk:environment
         OptionName: ServiceRole
         Value: aws-elasticbeanstalk-service-role
-      SolutionStackName: 64bit Amazon Linux 2 v3.3.2 running Corretto 8
+      SolutionStackName: 64bit Amazon Linux 2 v3.3.2 running Corretto 11
 
   BeanstalkEnvironment:
     Type: AWS::ElasticBeanstalk::Environment
