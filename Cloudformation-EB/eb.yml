@@ -11,11 +11,6 @@ Conditions:
   CreateDNSRecordCondition: !Not [!Equals [ !Ref MyHostedZoneName, "" ]]
 
 Resources:
-  S3Bucket:
-    Type: 'AWS::S3::Bucket'
-    DeletionPolicy: Retain
-    Properties:
-      BucketName: playdatanew4
   BeanstalkApplication:
     Type: AWS::ElasticBeanstalk::Application
     Properties:
@@ -29,7 +24,7 @@ Resources:
       OptionSettings:
       - Namespace: aws:autoscaling:launchconfiguration
         OptionName: InstanceType
-        Value: t2.large
+        Value: t2.micro
       - Namespace: aws:autoscaling:launchconfiguration
         OptionName: SSHSourceRestriction
         Value: !Sub "tcp, 22, 22, 127.0.0.1/32"
@@ -48,7 +43,7 @@ Resources:
       - Namespace: aws:elasticbeanstalk:environment
         OptionName: ServiceRole
         Value: aws-elasticbeanstalk-service-role
-      SolutionStackName: 64bit Amazon Linux 2 v4.2.18 running Tomcat 8.5 Corretto 8
+      SolutionStackName: 64bit Amazon Linux 2 v4.2.18 running Tomcat 8.5 Corretto 11 
 
   BeanstalkEnvironment:
     Type: AWS::ElasticBeanstalk::Environment

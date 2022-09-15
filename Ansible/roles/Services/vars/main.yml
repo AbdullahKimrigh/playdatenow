@@ -1,3 +1,4 @@
 packages:
   - openjdk-11-jre
   - maven
+  - awscli
