@@ -1,6 +1,6 @@
 - name: update packages
   apt:
-    name: update
+    name: 'update'
   update_cache: true
   become: true
 
