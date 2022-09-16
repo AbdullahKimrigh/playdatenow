@@ -7,17 +7,17 @@ Resources:
 
     Properties:
 
-      BucketName: "playdatenownewn3"
+      BucketName: "playdatenown"
 
  
 
-  playdatenow0:
+  playdatenowapp:
 
     Type: AWS::ElasticBeanstalk::Application
 
     Properties:
 
-      ApplicationName: "playdatenow0"
+      ApplicationName: "playdatenowapp"
 
   myConfigTemplate:
 
@@ -27,7 +27,7 @@ Resources:
 
       ApplicationName:
 
-        Ref: "playdatenow0"
+        Ref: "playdatenowapp"
 
       SolutionStackName: "64bit Amazon Linux 2 v4.2.18 running Tomcat 8.5 Corretto 11"
 
@@ -42,7 +42,7 @@ Resources:
 
       ApplicationName:
 
-        Ref: "playdatenow0"
+        Ref: "playdatenowapp"
 
       EnvironmentName: playdatenow-env
 
