@@ -6,7 +6,6 @@ Resources:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
-        DefaultRootObject: index.jsp
         Origins:
         - Id: Custom Origin
           DomainName: Test-env.eba-zzpsrmuq.us-east-1.elasticbeanstalk.com
