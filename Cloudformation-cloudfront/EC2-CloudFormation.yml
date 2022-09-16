@@ -6,9 +6,10 @@ Resources:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
+        DefaultRootObject: ''
         Origins:
         - Id: Custom Origin
-          DomainName: playdatenow-env.eba-mcavx5j8.us-east-1.elasticbeanstalk.com
+          DomainName: awseb-e-x-awsebloa-1g82h1xawoi3i-1123840016.us-east-1.elb.amazonaws.com
           CustomOriginConfig:
             OriginProtocolPolicy: match-viewer
         DefaultCacheBehavior:

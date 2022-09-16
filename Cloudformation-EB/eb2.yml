@@ -7,17 +7,17 @@ Resources:
 
     Properties:
 
-      BucketName: "playdatenown"
+      BucketName: "playdatenown2"
 
  
 
-  playdatenowapp:
+  playdatenowapp1:
 
     Type: AWS::ElasticBeanstalk::Application
 
     Properties:
 
-      ApplicationName: "playdatenowapp"
+      ApplicationName: "playdatenowapp1"
 
   myConfigTemplate:
 
@@ -27,7 +27,7 @@ Resources:
 
       ApplicationName:
 
-        Ref: "playdatenowapp"
+        Ref: "playdatenowapp1"
 
       SolutionStackName: "64bit Amazon Linux 2 v4.2.18 running Tomcat 8.5 Corretto 11"
 
@@ -42,9 +42,9 @@ Resources:
 
       ApplicationName:
 
-        Ref: "playdatenowapp"
+        Ref: "playdatenowapp1"
 
-      EnvironmentName: playdatenow-env
+      EnvironmentName: playdatenow-env1
 
       SolutionStackName: "64bit Amazon Linux 2 v4.2.18 running Tomcat 8.5 Corretto 11"
 
@@ -67,3 +67,9 @@ Resources:
             OptionName: ServiceRole
 
             Value: aws-elasticbeanstalk-service-role
+
+          - Namespace: aws:elasticbeanstalk:environment
+
+            OptionName: EnvironmentType
+            
+            Value: LoadBalanced

@@ -6,11 +6,11 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
 
-        AWS_S3_BUCKET = "playdatenown"
+        AWS_S3_BUCKET = "playdatenown2"
         ARTIFACT_NAME = "playdatenown8.war"
-        AWS_EB_APP_NAME = "playdatenowapp"
+        AWS_EB_APP_NAME = "playdatenowapp1"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "playdatenow-env"
+        AWS_EB_ENVIRONMENT = "playdatenow-env1"
 
         
         PROJECT_KEY = "playdatenowprojectt"
