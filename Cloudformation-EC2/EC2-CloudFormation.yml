@@ -131,8 +131,8 @@ Resources:
           ToPort: 9001
           CidrIp: 0.0.0.0/0
         - IpProtocol: tcp
-          FromPort: 6603
-          ToPort: 6603
+          FromPort: 3306
+          ToPort: 3306
           CidrIp: 0.0.0.0/0
         
       VpcId: !Ref VPC 
