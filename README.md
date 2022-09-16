@@ -30,7 +30,6 @@
   <li>Jawza subai</li>
   <li>Abdullahkimrigh</li>
   <li>Reema Almuhaimeed</li>
-  <li>Jawza subai</li>
   <li>Mastoura Alqaisi</li>
   <li>Dareen Algraigri</li>
   <li>Fatima Almagrabi</li>
