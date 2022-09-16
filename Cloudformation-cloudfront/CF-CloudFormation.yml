@@ -6,7 +6,7 @@ Resources:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
-        DefaultRootObject: ""
+        DefaultRootObject: ''
         Origins:
         - Id: Custom Origin
           DomainName: awseb-e-p-AWSEBLoa-1UH36VASOLOLV-1327187597.us-east-1.elb.amazonaws.com
