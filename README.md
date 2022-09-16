@@ -1,7 +1,7 @@
 # Project: playdatenow
 
 <p align="center">
- <img src="playdatenow.jpg" width="900"  alt="accessibility text">
+ <img src="playdatenow.jpg" width="1000"  alt="accessibility text">
 </p>
 
 <h2>What Is A Playdate?</h2>
@@ -28,7 +28,7 @@
  <ul>
  <li>Hanan Alqarni</li>
   <li>Jawza subai</li>
-  <li>Abdullahkimrigh</li>
+  <li>Abdullah kimrigh</li>
   <li>Reema Almuhaimeed</li>
   <li>Mastoura Alqaisi</li>
   <li>Dareen Algraigri</li>
