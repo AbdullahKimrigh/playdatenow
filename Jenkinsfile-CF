@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    environment {
+
+        AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+        stack_name = "playdatenow-CF"
+        file_name = "CF-CloudFormation.yml"
+
+    }
+    stages {
+        stage ('git clone') {
+            steps {
+                sh 'git pull https://github.com/AbdullahKimrigh/playdatenow.git'
+            }
+        }
+        
+        stage('Submit Stack') {
+            steps {
+                sh "aws cloudformation create-stack --stack-name $stack_name --template-body file://Cloudformation-EB/CF-CloudFormation.yml --region 'us-east-1'"
+            }
+        }
+    }
+}
