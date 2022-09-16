@@ -11,6 +11,14 @@ Conditions:
   CreateDNSRecordCondition: !Not [!Equals [ !Ref MyHostedZoneName, "" ]]
 
 Resources:
+  
+  myS3Bucket:
+
+    Type: "AWS::S3::Bucket"
+
+    Properties:
+
+      BucketName: "playdatecale"
   BeanstalkApplication:
     Type: AWS::ElasticBeanstalk::Application
     Properties:
