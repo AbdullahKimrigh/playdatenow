@@ -1,3 +1,10 @@
+- name: update packages
+  apt:
+    name: "*"
+    state: present
+  update_cache: true
+  become: true
+
 - name: install Java
   apt:
     name: openjdk-11-jre
