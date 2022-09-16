@@ -6,7 +6,6 @@ Resources:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
-        DefaultRootObject: index.jsp
         Origins:
         - Id: Custom Origin
           DomainName: playdatenow-env.eba-mcavx5j8.us-east-1.elasticbeanstalk.com
