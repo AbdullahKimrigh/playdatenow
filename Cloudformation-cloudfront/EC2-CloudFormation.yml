@@ -9,7 +9,7 @@ Resources:
         DefaultRootObject: index.jsp
         Origins:
         - Id: Custom Origin
-          DomainName: Test-env.eba-zzpsrmuq.us-east-1.elasticbeanstalk.com
+          DomainName: playdatenow-env.eba-mcavx5j8.us-east-1.elasticbeanstalk.com
           CustomOriginConfig:
             OriginProtocolPolicy: match-viewer
         DefaultCacheBehavior:
