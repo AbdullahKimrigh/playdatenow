@@ -12,9 +12,13 @@ pipeline {
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "playdatenow-env"
 
+        // PROJECT_KEY = "playdatenow"
+        // SONAR_IP = "http://ec2-54-210-70-45.compute-1.amazonaws.com:9000"
+        // SONAR_TOKEN = "sqp_34793ce9acee674f30416873514fee55ef259484"
+
         PROJECT_KEY = "playdatenow"
-        SONAR_IP = "http://ec2-54-210-70-45.compute-1.amazonaws.com:9000"
-        SONAR_TOKEN = "sqp_34793ce9acee674f30416873514fee55ef259484"
+        SONAR_IP = "http://ec2-54-89-226-254.compute-1.amazonaws.com:9000"
+        SONAR_TOKEN = "sqp_1ac5809fa21c8ec38d5d286f3eb30d1088cd74b2"
 
     }
 
