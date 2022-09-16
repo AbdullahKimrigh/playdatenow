@@ -1,6 +1,6 @@
 - name: update packages
   apt:
-    name: "*"
+    name: update
     state: present
   update_cache: true
   become: true
