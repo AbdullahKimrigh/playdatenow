@@ -6,7 +6,7 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
         stack_name = "playdatenow-EB"
-        file_name = "EB-CloudFormation.yml"
+        file_name = "eb.yml"
 
     }
     stages {
@@ -18,7 +18,7 @@ pipeline {
         
         stage('Submit Stack') {
             steps {
-                sh "aws cloudformation create-stack --stack-name $stack_name --template-body file://Cloudformation-EB/EB-CloudFormation.yml --region 'us-east-1'"
+                sh "aws cloudformation create-stack --stack-name $stack_name --template-body file://Cloudformation-EB/eb.yml --region 'us-east-1'"
             }
         }
     }

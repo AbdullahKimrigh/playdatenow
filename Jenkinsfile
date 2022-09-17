@@ -6,16 +6,15 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
 
-        AWS_S3_BUCKET = "playdatenown2"
-        ARTIFACT_NAME = "playdatenown8.war"
-        AWS_EB_APP_NAME = "playdatenowapp1"
+        AWS_S3_BUCKET = "playdatanow"
+        ARTIFACT_NAME = "playdatenow_v03b-0.0.1-SNAPSHOT.war"
+        AWS_EB_APP_NAME = " playdatenow-EB"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "playdatenow-env1"
+        AWS_EB_ENVIRONMENT = " playdatenow-EB"
 
-        
-        PROJECT_KEY = "playdatenowprojectt"
-        SONAR_IP = "http://ec2-54-89-226-254.compute-1.amazonaws.com:9000"
-        SONAR_TOKEN = "sqp_1ac5809fa21c8ec38d5d286f3eb30d1088cd74b2"
+        PROJECT_KEY = "playdatenow"
+        SONAR_IP = "http://ec2-54-204-130-157.compute-1.amazonaws.com:9000"
+        SONAR_TOKEN = "sqp_ae9718c5c5a83a1feff2a54fe73117e74f8a1ddd"
 
     }
 
