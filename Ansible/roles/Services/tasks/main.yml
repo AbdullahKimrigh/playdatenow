@@ -1,0 +1,22 @@
+- name: update packages
+  apt:
+    name: '*'
+  becone: true
+
+- name: install Java
+  apt:
+    name: openjdk-11-jre
+    state: present
+  become: true
+
+- name: Install Maven
+  apt:
+    name: maven
+    state: present
+  become: true
+
+- name: Install awscli
+  apt:
+    name: awscli
+    state: present
+  become: true

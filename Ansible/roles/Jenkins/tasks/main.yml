@@ -1,0 +1,33 @@
+
+- name: Download Jenkins repo apt URL
+  apt_key:
+    url: "{{ jenkins.repo_url }}"
+    state: present
+  become: true
+
+- name: ensure the repository is configured
+  apt_repository:
+    repo: 'deb https://pkg.jenkins.io/debian-stable binary/'
+    state: present
+  become: true
+
+- name: install jenkins
+  apt:
+    name: jenkins
+    state: latest
+  become: true
+
+- name: start Jenkins
+  service:
+    name: jenkins
+    enabled: true
+    state: started
+
+- name: get init password jenkins
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: result  
+  become: true
+
+- name: print init jenkins password
+  debug:
+    var: result.stdout
