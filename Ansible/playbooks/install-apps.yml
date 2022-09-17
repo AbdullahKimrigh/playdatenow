@@ -1,7 +1,0 @@
-- name: Setup Webserver
-  hosts: webservers
-  roles:
-    - ../roles/Jenkins
-    - ../roles/SonarQube
-    - ../roles/Maven
-  become: true
