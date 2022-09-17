@@ -18,7 +18,7 @@ pipeline {
         
         stage('Submit Stack') {
             steps {
-                sh "aws cloudformation create-stack --stack-name $stack_name --template-body file://Cloudformation-cloudfront/CF-CloudFormation.yml --region 'us-east-1'"
+                sh "aws cloudformation create-stack --stack-name $stack_name --template-body file://Cloudformation-CF/CF-CloudFormation.yml --region 'us-east-1'"
             }
         }
     }
